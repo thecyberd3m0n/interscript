@@ -34,4 +34,4 @@ jobs:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Install
-      run: cd ruby/; bundle exec rake
+      run: cd ruby/; bundle exec generate_visualization_json;
