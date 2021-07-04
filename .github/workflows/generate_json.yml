@@ -29,11 +29,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         submodules: true
-
-    - uses: actions/upload-artifact@v2
-      with:
-        name: jsons
-        path: ruby/json
     - name: Use Ruby
       uses: ruby/setup-ruby@v1
       with:
@@ -42,3 +37,8 @@ jobs:
         working-directory: ./ruby
     - name: Install
       run: bundle exec rake generate_visualization_json;
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: jsons
+        path: ruby/json
