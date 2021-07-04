@@ -43,7 +43,7 @@ jobs:
         name: jsons
         path: ruby/vis_json
     - name: Generate metadata
-      run: cd ruby/; bundle exec rake metadata_json;
+      run: bundle exec rake metadata_json;
     - name: Upload metadata
       uses: actions/upload-artifact@v2
       with:
