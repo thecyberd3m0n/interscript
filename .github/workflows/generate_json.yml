@@ -30,6 +30,10 @@ jobs:
       with:
         submodules: true
 
+    - uses: actions/upload-artifact@v2
+      with:
+        name: jsons
+        path: ruby/json
     - name: Use Ruby
       uses: ruby/setup-ruby@v1
       with:
