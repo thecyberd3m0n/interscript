@@ -41,4 +41,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: jsons
-        path: ruby/json
+        path: ruby/vis_json
