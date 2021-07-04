@@ -35,10 +35,18 @@ jobs:
         ruby-version: 3.0
         bundler-cache: true
         working-directory: ./ruby
-    - name: Install
+    - name: Generate visualization json
       run: bundle exec rake generate_visualization_json;
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
         name: jsons
         path: ruby/vis_json
+    - name: Generate metadata
+      run: bundle exec rake metadata_json;
+    - name: Upload metadata
+      uses: actions/upload-artifact@v2
+      with:
+        name: metadata
+        path: ruby/metadata.json
+      
