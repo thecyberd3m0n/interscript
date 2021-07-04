@@ -25,7 +25,7 @@ jobs:
       matrix:
         ruby-version: ['3.0']
     env:
-      BUNDLE_WITHOUT: "secryst"
+      BUNDLE_WITHOUT: "secryst:jsexec"
       SKIP_JS: "1"
     steps:
     - name: Checkout repository and submodules
