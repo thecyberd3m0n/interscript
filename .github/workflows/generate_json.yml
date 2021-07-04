@@ -24,7 +24,9 @@ jobs:
     strategy:
       matrix:
         ruby-version: ['3.0']
-
+    env:
+      BUNDLE_WITHOUT: "secryst"
+      SKIP_JS: "1"
     steps:
     - name: Checkout repository and submodules
       uses: actions/checkout@v2
@@ -38,4 +40,4 @@ jobs:
         bundler-cache: true
         working-directory: ./ruby
     - name: Install
-      run: cd ruby/; bundle exec rake generate_visualization_json;
+      run: bundle exec rake generate_visualization_json;
